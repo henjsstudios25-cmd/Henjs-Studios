@@ -5,6 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Henjs Studios — Roblox games worth grinding for</title>
 <meta name="description" content="Henjs Studios makes colorful, chaotic, fun Roblox games. Explore our games, see what's new, and join the community.">
+<link rel="canonical" href="https://henjsstudios25-cmd.github.io/Henjs-Studios/">
+
+<!-- Open Graph / social sharing preview -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Henjs Studios — Roblox games worth grinding for">
+<meta property="og:description" content="Henjs Studios makes colorful, chaotic, fun Roblox games. Explore our games, see what's new, and join the community.">
+<meta property="og:url" content="https://henjsstudios25-cmd.github.io/Henjs-Studios/">
+<meta property="og:site_name" content="Henjs Studios">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Henjs Studios — Roblox games worth grinding for">
+<meta name="twitter:description" content="Henjs Studios makes colorful, chaotic, fun Roblox games. Explore our games, see what's new, and join the community.">
+
+<!-- Structured data for search engines -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Henjs Studios",
+  "url": "https://henjsstudios25-cmd.github.io/Henjs-Studios/",
+  "description": "Henjs Studios makes colorful, chaotic, fun Roblox games.",
+  "sameAs": [
+    "https://discord.gg/2VwsNdTxc2",
+    "https://www.youtube.com/@HenjsStudios"
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -360,6 +388,16 @@
   .team-card h3{font-size:1.05rem; margin-bottom:4px;}
   .team-card .role{font-size:0.85rem; font-weight:800; color:var(--ink-soft);}
 
+  /* ---------- CONTACT ---------- */
+  #contact{background:var(--white); padding:100px 0 110px; border-bottom:3px solid var(--ink);}
+  .contact-row{
+    display:flex;
+    gap:16px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:8px;
+  }
+
   /* ---------- COMMUNITY ---------- */
   #community{
     padding:100px 0;
@@ -611,6 +649,7 @@
       <li><a href="#games">Games</a></li>
       <li><a href="#events">Events</a></li>
       <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
       <li><a href="#community" class="nav-cta">Discord</a></li>
     </ul>
   </nav>
@@ -671,6 +710,20 @@
       </div>
 
       <div class="team-grid" id="teamGrid"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FEEDBACK -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Get in touch</h2>
+        <p id="contactNote"></p>
+      </div>
+      <div class="contact-row">
+        <a id="contactEmailLink" class="btn btn-primary" href="#">✉ Email us</a>
+        <a href="#community" class="btn btn-secondary">💬 Message us on Discord</a>
+      </div>
     </div>
   </section>
 
@@ -753,7 +806,7 @@ Walk under falling fruit to scoop it up automatically, fill out your Fruit Index
 ✨ Hunt for ultra-rare secrets... some fruits are rarer than others 👀
 Grab a friend, race to fill your index, and see who can build the biggest fortune!`,
         link: "#",
-        image: "catch-it-screenshot.png",
+        image: "catch-it-screenshot (1).png",
         icon: "🧺",
         color: "var(--green)"
       }
@@ -782,8 +835,16 @@ Grab a friend, race to fill your index, and see who can build the biggest fortun
     // Replace "#" with the real URL. Leave as "#" if you don't have one yet.
     links: {
       discord: "https://discord.gg/2VwsNdTxc2",
-      robloxGroup: "https://www.roblox.com/share/g/354203070",
+      robloxGroup: "#",
       youtube: "https://www.youtube.com/@HenjsStudios"
+    },
+
+    // ---------- CONTACT ----------
+    // This powers the "Get in touch" section. Change the email or note
+    // any time — just keep the quotes and comma.
+    contact: {
+      email: "henjs.studios25@gmail.com",
+      note: "Got feedback, a bug report, or just want to say hi? Reach out any time."
     },
 
     // ---------- LEAKS ----------
@@ -917,6 +978,14 @@ Grab a friend, race to fill your index, and see who can build the biggest fortun
     });
   }
 
+  function renderContact(){
+    const note = document.getElementById('contactNote');
+    note.textContent = SITE_CONTENT.contact.note || '';
+
+    const emailLink = document.getElementById('contactEmailLink');
+    emailLink.href = 'mailto:' + (SITE_CONTENT.contact.email || '');
+  }
+
   function renderLeaks(){
     const list = document.getElementById('leakList');
     list.innerHTML = '';
@@ -937,6 +1006,7 @@ Grab a friend, race to fill your index, and see who can build the biggest fortun
   renderEvents();
   renderTeam();
   renderLinks();
+  renderContact();
   renderLeaks();
 
   const toggle = document.getElementById('navToggle');
