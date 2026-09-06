@@ -6,9 +6,7 @@
 <title>Henjs Studios — Roblox games worth grinding for</title>
 <meta name="description" content="Henjs Studios makes colorful, chaotic, fun Roblox games. Explore our games, see what's new, and join the community.">
 <link rel="canonical" href="https://henjsstudios25-cmd.github.io/Henjs-Studios/">
-  <meta name="google-site-verification" content="hgLDqQK2dBw_RgsjJ5vrvzC2YlkaIwkcADBxuAUkVd4" />
-<link rel="icon" type="image/png" href="favicon.png">
-  
+
 <!-- Open Graph / social sharing preview -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Henjs Studios — Roblox games worth grinding for">
@@ -451,190 +449,6 @@
   }
   footer a{text-decoration:underline; color:var(--cream-2);}
 
-  /* ---------- LEAKS (glitch) ---------- */
-  .leak-btn{
-    position:fixed;
-    bottom:22px;
-    right:22px;
-    z-index:90;
-    font-family:'Courier New', monospace;
-    font-size:0.78rem;
-    letter-spacing:1px;
-    color:#e8e8e8;
-    background:#0a0a0a;
-    border:1px solid #2a2a2a;
-    padding:9px 18px;
-    border-radius:3px;
-    cursor:pointer;
-    text-transform:lowercase;
-    box-shadow:0 0 14px rgba(255,43,109,0.55);
-    animation:leak-flicker 4.5s infinite, leak-jitter 2.6s infinite, leak-hue 5s linear infinite;
-  }
-  .leak-btn:hover{opacity:1;}
-  .leak-inner{position:relative; display:inline-block;}
-  .leak-inner::before,
-  .leak-inner::after{
-    content:'leaks';
-    position:absolute;
-    left:0; top:0;
-    width:100%;
-    mix-blend-mode:screen;
-  }
-  .leak-inner::before{color:#ff2b6d; animation:leak-glitch-1 3.4s infinite linear;}
-  .leak-inner::after{color:#00e5ff; animation:leak-glitch-2 3.1s infinite linear;}
-
-  .shard{
-    position:absolute;
-    top:50%; left:50%;
-    width:5px; height:12px;
-    pointer-events:none;
-    opacity:0;
-  }
-  .shard:nth-child(2){background:#ff2b6d; animation:shard-1 3.2s infinite;}
-  .shard:nth-child(3){background:#00e5ff; width:4px; height:9px; animation:shard-2 3.2s infinite 0.8s;}
-  .shard:nth-child(4){background:#e8e8e8; width:8px; height:3px; animation:shard-3 3.2s infinite 1.6s;}
-  .shard:nth-child(5){background:#ff2b6d; width:3px; height:3px; animation:shard-4 3.2s infinite 2.4s;}
-
-  @keyframes shard-1{
-    0%,92%,100%{opacity:0; transform:translate(-50%,-50%) scale(0.5);}
-    94%{opacity:1; transform:translate(calc(-50% - 22px), calc(-50% - 18px)) scale(1) rotate(15deg);}
-    98%{opacity:0; transform:translate(calc(-50% - 30px), calc(-50% - 26px)) scale(0.7) rotate(15deg);}
-  }
-  @keyframes shard-2{
-    0%,92%,100%{opacity:0; transform:translate(-50%,-50%) scale(0.5);}
-    94%{opacity:1; transform:translate(calc(-50% + 24px), calc(-50% - 14px)) scale(1) rotate(-10deg);}
-    98%{opacity:0; transform:translate(calc(-50% + 32px), calc(-50% - 20px)) scale(0.7) rotate(-10deg);}
-  }
-  @keyframes shard-3{
-    0%,92%,100%{opacity:0; transform:translate(-50%,-50%) scale(0.5);}
-    94%{opacity:1; transform:translate(calc(-50% - 18px), calc(-50% + 16px)) scale(1);}
-    98%{opacity:0; transform:translate(calc(-50% - 26px), calc(-50% + 22px)) scale(0.7);}
-  }
-  @keyframes shard-4{
-    0%,92%,100%{opacity:0; transform:translate(-50%,-50%) scale(0.5);}
-    94%{opacity:1; transform:translate(calc(-50% + 20px), calc(-50% + 18px)) scale(1);}
-    98%{opacity:0; transform:translate(calc(-50% + 28px), calc(-50% + 24px)) scale(0.7);}
-  }
-
-  @keyframes leak-flicker{
-    0%,19%,21%,23%,55%,57%,100%{opacity:0.88;}
-    20%,22%,56%{opacity:0.3;}
-  }
-  @keyframes leak-jitter{
-    0%,100%{transform:rotate(-2deg) translate(0,0);}
-    10%{transform:rotate(-5deg) translate(-2px,1px);}
-    20%{transform:rotate(2deg) translate(2px,-1px);}
-    30%{transform:rotate(-2deg) translate(0,0);}
-    55%{transform:rotate(4deg) translate(-1px,2px) skewX(3deg);}
-    60%{transform:rotate(-2deg) translate(0,0);}
-    85%{transform:rotate(-6deg) translate(2px,0);}
-    90%{transform:rotate(-2deg) translate(0,0);}
-  }
-  @keyframes leak-hue{
-    0%{filter:hue-rotate(0deg);}
-    50%{filter:hue-rotate(360deg);}
-    100%{filter:hue-rotate(0deg);}
-  }
-  @keyframes leak-glitch-1{
-    0%,88%,100%{transform:translate(0,0); clip-path:inset(0 0 0 0);}
-    89%{transform:translate(-3px,1px); clip-path:inset(20% 0 40% 0);}
-    91%{transform:translate(3px,-1px); clip-path:inset(60% 0 5% 0);}
-    93%{transform:translate(0,0); clip-path:inset(0 0 0 0);}
-  }
-  @keyframes leak-glitch-2{
-    0%,84%,100%{transform:translate(0,0); clip-path:inset(0 0 0 0);}
-    85%{transform:translate(3px,-1px); clip-path:inset(10% 0 70% 0);}
-    87%{transform:translate(-3px,1px); clip-path:inset(50% 0 20% 0);}
-    89%{transform:translate(0,0); clip-path:inset(0 0 0 0);}
-  }
-  @media (prefers-reduced-motion: reduce){
-    .leak-btn{animation:none;}
-    .leak-inner::before,.leak-inner::after{animation:none; opacity:0;}
-    .shard{animation:none; display:none;}
-  }
-
-  .leaks-overlay{
-    position:fixed;
-    inset:0;
-    z-index:300;
-    background:rgba(4,4,4,0.94);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:24px;
-    opacity:0;
-    visibility:hidden;
-    transition:opacity 0.2s ease;
-  }
-  .leaks-overlay.open{opacity:1; visibility:visible;}
-  .leaks-panel{
-    position:relative;
-    width:100%;
-    max-width:560px;
-    max-height:80vh;
-    overflow-y:auto;
-    background:#0a0a0a;
-    border:1px solid #2a2a2a;
-    border-radius:10px;
-    padding:38px 32px;
-    color:#d8d8d8;
-  }
-  .leaks-panel::before{
-    content:'';
-    position:absolute; inset:0;
-    border-radius:10px;
-    background:repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 3px);
-    pointer-events:none;
-  }
-  .leaks-content{position:relative; z-index:1;}
-  .leaks-close{
-    position:absolute;
-    top:14px; right:14px;
-    width:30px; height:30px;
-    background:none;
-    border:1px solid #333;
-    color:#ccc;
-    border-radius:6px;
-    font-family:'Courier New', monospace;
-    font-size:1rem;
-    cursor:pointer;
-    z-index:2;
-  }
-  .leaks-close:hover{border-color:#666; color:#fff;}
-  .leaks-panel h2{
-    font-family:'Courier New', monospace;
-    color:#e8e8e8;
-    font-size:clamp(1.6rem,4vw,2.2rem);
-    letter-spacing:2px;
-    text-transform:lowercase;
-    margin:0;
-  }
-  .leaks-panel .leak-desc{
-    font-family:'Courier New', monospace;
-    color:#8a8a8a;
-    margin:14px 0 30px;
-    font-size:0.92rem;
-  }
-  .leak-list{display:flex; flex-direction:column; gap:14px;}
-  .leak-item{
-    border:1px dashed #333;
-    border-radius:6px;
-    padding:18px 20px;
-    background:#111;
-    font-family:'Courier New', monospace;
-  }
-  .leak-item .leak-tag{
-    display:inline-block;
-    font-size:0.68rem;
-    background:#ff2b6d;
-    color:#0a0a0a;
-    padding:2px 9px;
-    border-radius:3px;
-    font-weight:700;
-    margin-bottom:10px;
-    letter-spacing:0.5px;
-  }
-  .leak-item p{color:#aaa; margin:0; font-size:0.92rem;}
 </style>
 </head>
 <body>
@@ -725,6 +539,7 @@
       <div class="contact-row">
         <a id="contactEmailLink" class="btn btn-primary" href="#">✉ Email us</a>
         <a href="#community" class="btn btn-secondary">💬 Message us on Discord</a>
+        <a id="staffAppLink" class="btn btn-secondary" href="#" target="_blank" rel="noopener">📋 Apply to join staff</a>
       </div>
     </div>
   </section>
@@ -739,22 +554,6 @@
   </section>
 
 </main>
-
-<button type="button" id="leakBtn" class="leak-btn" aria-haspopup="dialog">
-  <span class="leak-inner" id="leakLabel">leaks</span>
-  <span class="shard"></span><span class="shard"></span><span class="shard"></span><span class="shard"></span>
-</button>
-
-<div class="leaks-overlay" id="leaksOverlay" role="dialog" aria-modal="true" aria-label="Leaks">
-  <div class="leaks-panel">
-    <button type="button" class="leaks-close" id="leaksClose" aria-label="Close">✕</button>
-    <div class="leaks-content">
-      <h2>// leaks</h2>
-      <p class="leak-desc">early builds, cut content, and stuff that wasn't supposed to get out.</p>
-      <div class="leak-list" id="leakList"></div>
-    </div>
-  </div>
-</div>
 
 <footer>
   <p>© 2026 Henjs Studios. Made by players, for players.</p>
@@ -771,7 +570,7 @@
   // Rules to keep it working:
   //  - Keep the quotes "like this" around any text you write
   //  - Keep the commas at the end of each line
-  //  - To add a new game, event, team member, or leak, copy a
+  //  - To add a new game, event, or team member, copy a
   //    whole { ... } block and paste it above or below an existing one
   // ============================================================
 
@@ -792,7 +591,7 @@
         tag: "Discontinued",
         description: "A tricky Roblox obby. This one has been discontinued — we're not actively working on it anymore, but it's still up.",
         link: "https://www.roblox.com/games/83178372157679/Unpaied-to-Win-Obby",
-        image: "unpaid_icon.png",
+        image: "",
         icon: "🧱",
         color: "var(--sky)"
       },
@@ -808,7 +607,7 @@ Walk under falling fruit to scoop it up automatically, fill out your Fruit Index
 ✨ Hunt for ultra-rare secrets... some fruits are rarer than others 👀
 Grab a friend, race to fill your index, and see who can build the biggest fortune!`,
         link: "#",
-        image: "catch-it-screenshot.png",
+        image: "catch-it-screenshot (1).png",
         icon: "🧺",
         color: "var(--green)"
       }
@@ -837,8 +636,11 @@ Grab a friend, race to fill your index, and see who can build the biggest fortun
     // Replace "#" with the real URL. Leave as "#" if you don't have one yet.
     links: {
       discord: "https://discord.gg/2VwsNdTxc2",
-      robloxGroup: "https://www.roblox.com/share/g/354203070",
-      youtube: "https://www.youtube.com/@HenjsStudios"
+      robloxGroup: "#",
+      youtube: "https://www.youtube.com/@HenjsStudios",
+      x: "#",
+      instagram: "#",
+      staffApplication: "#"
     },
 
     // ---------- CONTACT ----------
@@ -847,17 +649,7 @@ Grab a friend, race to fill your index, and see who can build the biggest fortun
     contact: {
       email: "henjs.studios25@gmail.com",
       note: "Got feedback, a bug report, or just want to say hi? Reach out any time."
-    },
-
-    // ---------- LEAKS ----------
-    // Copy a whole { ... } block to add another leak post.
-    // Nothing posted yet — this stays as a placeholder until you're ready.
-    leaks: [
-      {
-        tag: "unreleased",
-        text: "Nothing posted yet — check back soon."
-      }
-    ]
+    }
 
   };
 
@@ -967,7 +759,9 @@ Grab a friend, race to fill your index, and see who can build the biggest fortun
     const items = [
       { key:'discord', icon:'💬', label:'Discord' },
       { key:'robloxGroup', icon:'🧊', label:'Roblox Group' },
-      { key:'youtube', icon:'▶', label:'YouTube' }
+      { key:'youtube', icon:'▶', label:'YouTube' },
+      { key:'x', icon:'𝕏', label:'X' },
+      { key:'instagram', icon:'📸', label:'Instagram' }
     ];
     items.forEach(it => {
       const a = document.createElement('a');
@@ -986,22 +780,9 @@ Grab a friend, race to fill your index, and see who can build the biggest fortun
 
     const emailLink = document.getElementById('contactEmailLink');
     emailLink.href = 'mailto:' + (SITE_CONTENT.contact.email || '');
-  }
 
-  function renderLeaks(){
-    const list = document.getElementById('leakList');
-    list.innerHTML = '';
-    SITE_CONTENT.leaks.forEach(leak => {
-      const item = document.createElement('div');
-      item.className = 'leak-item';
-      const tag = document.createElement('span');
-      tag.className = 'leak-tag';
-      tag.textContent = leak.tag || '';
-      const p = document.createElement('p');
-      p.textContent = leak.text || '';
-      item.append(tag, p);
-      list.appendChild(item);
-    });
+    const staffAppLink = document.getElementById('staffAppLink');
+    staffAppLink.href = SITE_CONTENT.links.staffApplication || '#';
   }
 
   renderGames();
@@ -1009,7 +790,6 @@ Grab a friend, race to fill your index, and see who can build the biggest fortun
   renderTeam();
   renderLinks();
   renderContact();
-  renderLeaks();
 
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
@@ -1022,52 +802,6 @@ Grab a friend, race to fill your index, and see who can build the biggest fortun
     toggle.setAttribute('aria-expanded', 'false');
   }));
 
-  // ---- leaks overlay: the button is the only way in, it's never part of the page scroll ----
-  const leakBtn = document.getElementById('leakBtn');
-  const leaksOverlay = document.getElementById('leaksOverlay');
-  const leaksClose = document.getElementById('leaksClose');
-
-  function openLeaks(){
-    leaksOverlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeLeaks(){
-    leaksOverlay.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  leakBtn.addEventListener('click', openLeaks);
-  leaksClose.addEventListener('click', closeLeaks);
-  leaksOverlay.addEventListener('click', (e) => {
-    if (e.target === leaksOverlay) closeLeaks();
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLeaks();
-  });
-
-  // ---- glitch text scramble on the leaks button ----
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!reduceMotion) {
-    const leakLabel = document.getElementById('leakLabel');
-    const original = 'leaks';
-    const glitchChars = '!<>-_\\/[]{}=+*^?#01';
-
-    function scrambleBurst(){
-      let frame = 0;
-      const totalFrames = 14;
-      const timer = setInterval(() => {
-        const revealCount = Math.floor((frame / totalFrames) * original.length);
-        leakLabel.textContent = original.split('').map((ch, i) => {
-          return i < revealCount ? ch : glitchChars[Math.floor(Math.random() * glitchChars.length)];
-        }).join('');
-        frame++;
-        if (frame > totalFrames) {
-          clearInterval(timer);
-          leakLabel.textContent = original;
-        }
-      }, 45);
-    }
-    setInterval(scrambleBurst, 3600);
-  }
 </script>
 
 </body>
