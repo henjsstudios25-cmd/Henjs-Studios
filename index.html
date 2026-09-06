@@ -8,8 +8,7 @@
 <link rel="canonical" href="https://henjsstudios25-cmd.github.io/Henjs-Studios/">
   <meta name="google-site-verification" content="hgLDqQK2dBw_RgsjJ5vrvzC2YlkaIwkcADBxuAUkVd4" />
 <link rel="icon" type="image/png" href="favicon.png">
-  
-<!-- Open Graph / social sharing preview -->
+
 <meta property="og:type" content="website">
 <meta property="og:title" content="Henjs Studios — Roblox games worth grinding for">
 <meta property="og:description" content="Henjs Studios makes colorful, chaotic, fun Roblox games. Explore our games, see what's new, and join the community.">
@@ -20,7 +19,6 @@
 <meta name="twitter:title" content="Henjs Studios — Roblox games worth grinding for">
 <meta name="twitter:description" content="Henjs Studios makes colorful, chaotic, fun Roblox games. Explore our games, see what's new, and join the community.">
 
-<!-- Structured data for search engines -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -90,7 +88,6 @@
     *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
   }
 
-  /* ---------- NAV ---------- */
   header{
     position:sticky;
     top:0;
@@ -167,7 +164,6 @@
     .navtoggle{display:block;}
   }
 
-  /* ---------- HERO ---------- */
   .hero{
     padding:88px 32px 120px;
     position:relative;
@@ -271,7 +267,6 @@
       radial-gradient(circle at 10px 0, transparent 12px, var(--white) 13px) 0 -12px/40px 24px repeat-x;
   }
 
-  /* ---------- GAMES ---------- */
   #games{background:var(--white); padding:100px 0 110px; border-bottom:3px solid var(--ink);}
   .section-head{text-align:center; max-width:600px; margin:0 auto 56px;}
   .section-head h2{font-size:clamp(2rem,4vw,2.8rem);}
@@ -331,7 +326,6 @@
   }
   .play-link:hover{background:var(--yellow);}
 
-  /* ---------- EVENTS & UPDATES ---------- */
   #events{background:var(--cream-2); padding:100px 0 110px; border-bottom:3px solid var(--ink);}
   .events-list{display:flex; flex-direction:column; gap:18px; max-width:760px; margin:0 auto;}
   .event-card{
@@ -360,7 +354,6 @@
   .event-body h3{font-size:1.15rem; margin-bottom:6px;}
   .event-body p{color:var(--ink-soft); font-weight:600; font-size:0.95rem; margin:0;}
 
-  /* ---------- TEAM ---------- */
   #team{padding:100px 0 110px; background:var(--cream-2); border-bottom:3px solid var(--ink);}
   .team-grid{
     display:grid;
@@ -390,7 +383,6 @@
   .team-card h3{font-size:1.05rem; margin-bottom:4px;}
   .team-card .role{font-size:0.85rem; font-weight:800; color:var(--ink-soft);}
 
-  /* ---------- CONTACT ---------- */
   #contact{background:var(--white); padding:100px 0 110px; border-bottom:3px solid var(--ink);}
   .contact-row{
     display:flex;
@@ -400,7 +392,6 @@
     margin-top:8px;
   }
 
-  /* ---------- COMMUNITY ---------- */
   #community{
     padding:100px 0;
     background:var(--grape);
@@ -439,7 +430,6 @@
   }
   .social-pill:hover{transform:translateY(-3px);}
 
-  /* ---------- FOOTER ---------- */
   footer{
     padding:40px 32px;
     text-align:center;
@@ -451,6 +441,7 @@
   }
   footer a{text-decoration:underline; color:var(--cream-2);}
 
+</style>
 </head>
 <body>
 
@@ -474,7 +465,6 @@
 
 <main id="top">
 
-  <!-- HERO -->
   <section class="hero">
     <div class="cube cube-a"><div class="face top"></div><div class="face front"></div></div>
     <div class="cube cube-b"><div class="face top"></div><div class="face front"></div></div>
@@ -493,7 +483,6 @@
     <div class="scallop"></div>
   </section>
 
-  <!-- GAMES -->
   <section id="games">
     <div class="wrap">
       <div class="section-head">
@@ -506,7 +495,6 @@
     </div>
   </section>
 
-  <!-- EVENTS & UPDATES -->
   <section id="events">
     <div class="wrap">
       <div class="section-head">
@@ -518,7 +506,6 @@
     </div>
   </section>
 
-  <!-- TEAM -->
   <section id="team">
     <div class="wrap">
       <div class="section-head">
@@ -530,7 +517,6 @@
     </div>
   </section>
 
-  <!-- CONTACT / FEEDBACK -->
   <section id="contact">
     <div class="wrap">
       <div class="section-head">
@@ -545,7 +531,6 @@
     </div>
   </section>
 
-  <!-- COMMUNITY -->
   <section id="community">
     <div class="wrap">
       <h2>Join the crew</h2>
@@ -561,31 +546,8 @@
 </footer>
 
 <script>
-  // ============================================================
-  // HENJS STUDIOS — EDIT YOUR WEBSITE HERE
-  //
-  // This is the ONLY part of the file you need to touch to update
-  // your site. Change the text below, save/commit on GitHub, and
-  // your website updates automatically within about a minute.
-  //
-  // Rules to keep it working:
-  //  - Keep the quotes "like this" around any text you write
-  //  - Keep the commas at the end of each line
-  //  - To add a new game, event, or team member, copy a
-  //    whole { ... } block and paste it above or below an existing one
-  // ============================================================
-
   const SITE_CONTENT = {
 
-    // ---------- GAMES ----------
-    // "image" is optional: paste a real picture URL from the Roblox game
-    // page (right-click the game's thumbnail → Copy image address) and
-    // it'll show that instead of the emoji icon. Leave image as "" to
-    // just use the emoji.
-    //
-    // NOTE: the "image" filename below must match EXACTLY (including
-    // spaces, parentheses, capitalization) the filename shown in your
-    // GitHub repo's file list.
     games: [
       {
         name: "Unpaid to Win Obby",
@@ -614,8 +576,6 @@ Grab a friend, race to fill your index, and see who can build the biggest fortun
       }
     ],
 
-    // ---------- EVENTS & UPDATES ----------
-    // Copy a whole { ... } block to add another event or update.
     events: [
       {
         date: "TBA",
@@ -624,8 +584,6 @@ Grab a friend, race to fill your index, and see who can build the biggest fortun
       }
     ],
 
-    // ---------- TEAM ----------
-    // Copy a whole { ... } block to add another team member.
     team: [
       { name: "Henjs0606", role: "Game Director" },
       { name: "Henjs0606", role: "Lead Developer" },
@@ -633,8 +591,6 @@ Grab a friend, race to fill your index, and see who can build the biggest fortun
       { name: "Henjs0606", role: "Discord & Support" }
     ],
 
-    // ---------- LINKS ----------
-    // Replace "#" with the real URL. Leave as "#" if you don't have one yet.
     links: {
       discord: "https://discord.gg/2VwsNdTxc2",
       robloxGroup: "#",
@@ -644,17 +600,12 @@ Grab a friend, race to fill your index, and see who can build the biggest fortun
       staffApplication: "#"
     },
 
-    // ---------- CONTACT ----------
-    // This powers the "Get in touch" section. Change the email or note
-    // any time — just keep the quotes and comma.
     contact: {
       email: "henjs.studios25@gmail.com",
       note: "Got feedback, a bug report, or just want to say hi? Reach out any time."
     }
 
   };
-
-  // ---- everything below this line builds the page automatically — no need to edit it ----
 
   function renderGames(){
     const grid = document.getElementById('gameGrid');
