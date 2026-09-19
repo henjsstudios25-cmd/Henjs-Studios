@@ -441,13 +441,219 @@
   }
   footer a{text-decoration:underline; color:var(--cream-2);}
 
+  /* ---------- SECRET CATCH MODE ---------- */
+  .secret-btn{
+    background:none;
+    border:none;
+    font-size:0.9rem;
+    opacity:0.35;
+    cursor:pointer;
+    padding:4px 8px;
+    transition:opacity 0.2s ease;
+  }
+  .secret-btn:hover{opacity:0.9;}
+
+  .catch-overlay{
+    position:fixed;
+    inset:0;
+    z-index:400;
+    background:linear-gradient(180deg, #6FC7FA 0%, #2E86EB 100%);
+    display:none;
+    overflow:hidden;
+  }
+  .catch-overlay.open{display:block;}
+
+  .catch-topbar{
+    position:absolute;
+    top:0; left:0; right:0;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 24px;
+    background:rgba(255,255,255,0.85);
+    border-bottom:3px solid var(--ink);
+  }
+  .catch-topbar h2{font-size:1.3rem;}
+  .catch-stats{
+    display:flex;
+    gap:18px;
+    font-family:'Fredoka',sans-serif;
+    font-weight:700;
+    font-size:1.1rem;
+  }
+  #catchTimer{color:var(--pink);}
+  .catch-close{
+    background:var(--white);
+    border:3px solid var(--ink);
+    border-radius:999px;
+    width:40px;height:40px;
+    font-size:1.1rem;
+    cursor:pointer;
+    box-shadow:var(--shadow);
+  }
+
+  .falling-fruit{
+    position:absolute;
+    top:-60px;
+    font-size:2.2rem;
+    background:none;
+    border:none;
+    cursor:pointer;
+    line-height:1;
+    filter:drop-shadow(0 4px 0 rgba(0,0,0,0.15));
+    transition:transform 0.1s ease;
+  }
+  .falling-fruit:hover{transform:scale(1.15);}
+
+  .code-popup{
+    position:fixed;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    z-index:410;
+    background:var(--white);
+    border:3px solid var(--ink);
+    border-radius:var(--radius-lg);
+    padding:32px 36px;
+    text-align:center;
+    box-shadow:var(--shadow);
+    display:none;
+    max-width:420px;
+  }
+  .code-popup.open{display:block;}
+  .code-popup h3{font-size:1.4rem; margin-bottom:10px;}
+  .code-popup .code-value{
+    font-family:'Fredoka',sans-serif;
+    font-size:1.6rem;
+    font-weight:700;
+    background:var(--yellow);
+    border:3px solid var(--ink);
+    border-radius:12px;
+    padding:10px 18px;
+    display:inline-block;
+    margin:12px 0 18px;
+    letter-spacing:1px;
+  }
+  .code-popup p{color:var(--ink-soft); font-weight:600; font-size:0.95rem; margin-bottom:18px;}
+  .code-rarity{
+    display:inline-block;
+    font-family:'Fredoka',sans-serif;
+    font-weight:700;
+    font-size:0.85rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    padding:5px 14px;
+    border-radius:999px;
+    border:2.5px solid var(--ink);
+    margin-bottom:4px;
+  }
+  .code-rarity.common{background:var(--white); color:var(--ink-soft);}
+  .code-rarity.uncommon{background:var(--sky); color:var(--ink);}
+  .code-rarity.rare{background:var(--grape); color:var(--white);}
+  .code-rarity.legendary{background:var(--yellow); color:var(--ink); box-shadow:0 0 0 3px rgba(255,201,60,0.4);}
+
+  /* ---------- RETRO LOGO EASTER EGG ---------- */
+  .brand.retro-logo .brand-h,
+  .brand.retro-logo .brand-word{
+    font-family:'Courier New', monospace;
+    color:#FF3B3B !important;
+    -webkit-text-stroke:1px #000;
+    animation:retro-flicker 1.4s infinite steps(2);
+    cursor:pointer;
+  }
+  @keyframes retro-flicker{
+    0%,100%{opacity:1;}
+    50%{opacity:0.75;}
+  }
+
+  /* ---------- RETRO 2006 SITE THEME ---------- */
+  body.retro-mode{
+    background:#C6D4DF !important;
+    font-family:'Trebuchet MS', 'Comic Sans MS', Arial, sans-serif !important;
+  }
+  body.retro-mode header{
+    background:#D3DEE8 !important;
+    backdrop-filter:none !important;
+  }
+  body.retro-mode .btn,
+  body.retro-mode .game-card,
+  body.retro-mode .event-card,
+  body.retro-mode .team-card,
+  body.retro-mode .social-pill,
+  body.retro-mode .eyebrow-pill,
+  body.retro-mode .navlinks a{
+    border-radius:2px !important;
+    box-shadow:inset -2px -2px 0 rgba(0,0,0,0.25), inset 2px 2px 0 rgba(255,255,255,0.6) !important;
+  }
+  body.retro-mode .hero{
+    background:#C6D4DF !important;
+  }
+  body.retro-mode .hero h1,
+  body.retro-mode h2{
+    font-family:'Trebuchet MS', Arial, sans-serif !important;
+    color:#003D66 !important;
+    text-shadow:1px 1px 0 #fff;
+  }
+  body.retro-mode #games,
+  body.retro-mode #team,
+  body.retro-mode #contact{
+    background:#DCE6EE !important;
+  }
+  body.retro-mode #events,
+  body.retro-mode #community{
+    background:#A9C2D6 !important;
+  }
+  body.retro-mode .cube{display:none !important;}
+
+  .retro-marquee{
+    display:none;
+    background:#003D66;
+    color:#FFD700;
+    font-family:'Courier New', monospace;
+    font-weight:700;
+    font-size:0.95rem;
+    padding:6px 0;
+    overflow:hidden;
+    white-space:nowrap;
+    border-bottom:2px solid #001A33;
+  }
+  body.retro-mode .retro-marquee{display:block;}
+  .retro-marquee span{
+    display:inline-block;
+    padding-left:100%;
+    animation:retro-scroll 12s linear infinite;
+  }
+  @keyframes retro-scroll{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-100%);}
+  }
+
+  .retro-counter{
+    display:none;
+    position:fixed;
+    bottom:16px;
+    left:16px;
+    z-index:90;
+    background:#000;
+    color:#00FF00;
+    font-family:'Courier New', monospace;
+    font-size:0.8rem;
+    padding:6px 10px;
+    border:2px solid #444;
+  }
+  body.retro-mode .retro-counter{display:block;}
 </style>
 </head>
 <body>
 
+<div class="retro-marquee"><span>★彡 WELCOME TO HENJS STUDIOS ONLINE 彡★ BEST VIEWED AT 1024x768 ★彡 SIGN OUR GUESTBOOK ★彡 UNDER CONSTRUCTION 🚧</span></div>
+
+<div class="retro-counter" id="retroCounter">VISITORS: 004821</div>
+
 <header>
   <nav class="nav">
-    <a href="#top" class="brand">
+    <a href="#top" class="brand" id="brandLink">
       <span class="brand-h">H</span>
       <span class="brand-word">enjs Studios</span>
     </a>
@@ -543,7 +749,30 @@
 
 <footer>
   <p>© 2026 Henjs Studios. Made by players, for players.</p>
+  <button type="button" id="secretModeBtn" class="secret-btn" aria-label="???">•</button>
 </footer>
+
+<div class="catch-overlay" id="catchOverlay">
+  <div class="catch-topbar">
+    <h2>Catch It — Secret Mode</h2>
+    <div class="catch-stats">
+      <span id="catchTimer">30s</span>
+      <span id="catchScore">Score: 0</span>
+    </div>
+    <button type="button" class="catch-close" id="catchCloseBtn" aria-label="Close">✕</button>
+  </div>
+  <div id="fruitLayer"></div>
+</div>
+
+<div class="code-popup" id="codePopup">
+  <h3 id="codePopupTitle">Time's up!</h3>
+  <p id="codePopupScore">You caught 0 fruit.</p>
+  <div class="code-rarity" id="codeRarity">Common</div>
+  <div class="code-value" id="codeValue">CODE</div>
+  <p>Redeem this in Catch It on Roblox for a reward!</p>
+  <button type="button" class="btn btn-primary" id="codePopupClose">Close</button>
+  <button type="button" class="btn btn-secondary" id="codePopupReplay">Play again</button>
+</div>
 
 <script>
   const SITE_CONTENT = {
@@ -603,7 +832,20 @@ Grab a friend, race to fill your index, and see who can build the biggest fortun
     contact: {
       email: "henjs.studios25@gmail.com",
       note: "Got feedback, a bug report, or just want to say hi? Reach out any time."
-    }
+    },
+
+    // ---------- SECRET CODES ----------
+    // Codes given out by the hidden "Catch It" mini-game on the site.
+    // Players get 30 seconds to catch falling fruit; their final score
+    // decides which rarity tier they get a code from (higher score = better).
+    // Add, remove, or change codes any time — just keep the quotes and commas.
+    // "minScore" is the score needed to reach that tier.
+    codeRarities: [
+      { key: "common", label: "Common", minScore: 0, codes: ["FRUITSECRET1", "BASKETBONUS"] },
+      { key: "uncommon", label: "Uncommon", minScore: 5, codes: ["HIDDENHARVEST", "SPROUTSPECIAL"] },
+      { key: "rare", label: "Rare", minScore: 10, codes: ["GOLDENDROP", "RAREREWARD"] },
+      { key: "legendary", label: "Legendary", minScore: 15, codes: ["WEBSITEWIN", "LEGENDARYLOOT"] }
+    ]
 
   };
 
@@ -753,6 +995,170 @@ Grab a friend, race to fill your index, and see who can build the biggest fortun
     links.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
   }));
+
+  // ---- secret catch mode ----
+  const FRUIT_EMOJIS = ['🍓','🍎','🍊','🍋','🍇','🍉'];
+  const ROUND_SECONDS = 30;
+
+  const secretBtn = document.getElementById('secretModeBtn');
+  const catchOverlay = document.getElementById('catchOverlay');
+  const catchCloseBtn = document.getElementById('catchCloseBtn');
+  const fruitLayer = document.getElementById('fruitLayer');
+  const catchTimerEl = document.getElementById('catchTimer');
+  const catchScoreEl = document.getElementById('catchScore');
+  const codePopup = document.getElementById('codePopup');
+  const codePopupTitle = document.getElementById('codePopupTitle');
+  const codePopupScore = document.getElementById('codePopupScore');
+  const codeRarityEl = document.getElementById('codeRarity');
+  const codeValue = document.getElementById('codeValue');
+  const codePopupClose = document.getElementById('codePopupClose');
+  const codePopupReplay = document.getElementById('codePopupReplay');
+
+  let catchModeActive = false;
+  let spawnTimer = null;
+  let countdownTimer = null;
+  let score = 0;
+  let timeLeft = ROUND_SECONDS;
+  let usedCodesByTier = {};
+
+  function startRound(){
+    score = 0;
+    timeLeft = ROUND_SECONDS;
+    catchScoreEl.textContent = 'Score: 0';
+    catchTimerEl.textContent = timeLeft + 's';
+    fruitLayer.innerHTML = '';
+    codePopup.classList.remove('open');
+
+    catchModeActive = true;
+    catchOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    spawnTimer = setInterval(spawnFruit, 700);
+    countdownTimer = setInterval(() => {
+      timeLeft--;
+      catchTimerEl.textContent = timeLeft + 's';
+      if (timeLeft <= 0) endRound();
+    }, 1000);
+  }
+
+  function endRound(){
+    catchModeActive = false;
+    clearInterval(spawnTimer);
+    clearInterval(countdownTimer);
+    fruitLayer.innerHTML = '';
+    catchOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+    revealResult();
+  }
+
+  function closeCatchMode(){
+    catchModeActive = false;
+    clearInterval(spawnTimer);
+    clearInterval(countdownTimer);
+    fruitLayer.innerHTML = '';
+    catchOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function spawnFruit(){
+    if (!catchModeActive) return;
+
+    const fruit = document.createElement('button');
+    fruit.type = 'button';
+    fruit.className = 'falling-fruit';
+    fruit.textContent = FRUIT_EMOJIS[Math.floor(Math.random() * FRUIT_EMOJIS.length)];
+
+    const startX = Math.random() * (window.innerWidth - 50);
+    fruit.style.left = startX + 'px';
+    fruitLayer.appendChild(fruit);
+
+    const duration = 4000 + Math.random() * 2000;
+    const fallDistance = window.innerHeight + 80;
+
+    const animation = fruit.animate(
+      [
+        { transform: 'translateY(0px)' },
+        { transform: `translateY(${fallDistance}px)` }
+      ],
+      { duration: duration, easing: 'linear' }
+    );
+
+    animation.onfinish = () => {
+      if (fruit.parentNode) fruit.remove();
+    };
+
+    fruit.addEventListener('click', () => {
+      if (!catchModeActive) return;
+      animation.cancel();
+      fruit.remove();
+      score++;
+      catchScoreEl.textContent = 'Score: ' + score;
+    });
+  }
+
+  function pickRarityForScore(finalScore){
+    const tiers = SITE_CONTENT.codeRarities || [];
+    // sorted by minScore ascending, pick the highest tier the score qualifies for
+    const sorted = [...tiers].sort((a, b) => a.minScore - b.minScore);
+    let chosen = sorted[0];
+    sorted.forEach(tier => {
+      if (finalScore >= tier.minScore) chosen = tier;
+    });
+    return chosen;
+  }
+
+  function revealResult(){
+    const tier = pickRarityForScore(score);
+    if (!tier) return;
+
+    const usedForTier = usedCodesByTier[tier.key] || [];
+    let available = tier.codes.filter(c => !usedForTier.includes(c));
+    if (available.length === 0) {
+      available = tier.codes;
+      usedCodesByTier[tier.key] = [];
+    }
+
+    const code = available[Math.floor(Math.random() * available.length)];
+    usedCodesByTier[tier.key] = [...(usedCodesByTier[tier.key] || []), code];
+
+    codePopupTitle.textContent = "Time's up!";
+    codePopupScore.textContent = `You caught ${score} fruit.`;
+    codeRarityEl.textContent = tier.label;
+    codeRarityEl.className = 'code-rarity ' + tier.key;
+    codeValue.textContent = code;
+    codePopup.classList.add('open');
+  }
+
+  secretBtn.addEventListener('click', startRound);
+  catchCloseBtn.addEventListener('click', closeCatchMode);
+  codePopupClose.addEventListener('click', () => {
+    codePopup.classList.remove('open');
+  });
+  codePopupReplay.addEventListener('click', () => {
+    codePopup.classList.remove('open');
+    startRound();
+  });
+
+  // ---- retro logo easter egg ----
+  const RETRO_CHANCE = 0.12; // 12% chance the logo shows up retro-styled
+  const brandLink = document.getElementById('brandLink');
+  const retroCounter = document.getElementById('retroCounter');
+
+  if (Math.random() < RETRO_CHANCE) {
+    brandLink.classList.add('retro-logo');
+  }
+
+  brandLink.addEventListener('click', (e) => {
+    if (!brandLink.classList.contains('retro-logo')) return; // normal logo just scrolls up as usual
+    e.preventDefault();
+    document.body.classList.toggle('retro-mode');
+
+    if (document.body.classList.contains('retro-mode')) {
+      const visitorCount = 4800 + Math.floor(Math.random() * 300);
+      retroCounter.textContent = 'VISITORS: ' + String(visitorCount).padStart(6, '0');
+    }
+  });
+
 </script>
 
 </body>
