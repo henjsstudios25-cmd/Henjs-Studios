@@ -384,6 +384,8 @@
   .team-card .role{font-size:0.85rem; font-weight:800; color:var(--ink-soft);}
 
   #contact{background:var(--white); padding:100px 0 110px; border-bottom:3px solid var(--ink);}
+  #guestbookSection{padding:0;}
+  body.retro-mode #guestbookSection{padding:60px 0; background:#C6D4DF;}
   .contact-row{
     display:flex;
     gap:16px;
@@ -643,6 +645,286 @@
     border:2px solid #444;
   }
   body.retro-mode .retro-counter{display:block;}
+
+  /* ---------- RETRO EXPANSION: cursor, badges, webring ---------- */
+  body.retro-mode{
+    cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><polygon points='0,0 0,16 5,12 8,19 11,17 8,10 14,10' fill='black' stroke='white' stroke-width='1'/></svg>") 0 0, auto;
+  }
+
+  .blink-badge{
+    display:none;
+    background:#FF0000;
+    color:#FFFF00;
+    font-family:'Courier New', monospace;
+    font-weight:700;
+    font-size:0.75rem;
+    padding:2px 8px;
+    margin-left:8px;
+    animation:hard-blink 0.8s steps(1) infinite;
+    vertical-align:middle;
+  }
+  body.retro-mode .blink-badge{display:inline-block;}
+  @keyframes hard-blink{
+    0%,49%{opacity:1;}
+    50%,100%{opacity:0;}
+  }
+
+  .webring-badge{
+    display:none;
+    font-family:'Courier New', monospace;
+    font-size:0.8rem;
+    background:#000;
+    color:#0F0;
+    border:1px solid #444;
+    padding:6px 12px;
+    margin-top:14px;
+    display:inline-flex;
+    gap:10px;
+  }
+  .webring-badge a{color:#0FF; text-decoration:underline;}
+  body.retro-mode .webring-badge{display:inline-flex;}
+
+  /* ---------- RETRO EXPANSION: guestbook ---------- */
+  .retro-guestbook{
+    display:none;
+    max-width:600px;
+    margin:0 auto;
+    padding:24px;
+    background:#fff;
+    border:3px double #003D66;
+  }
+  body.retro-mode .retro-guestbook{display:block;}
+  .retro-guestbook h3{font-family:'Courier New', monospace; color:#003D66; margin-bottom:12px;}
+  .retro-guestbook input,
+  .retro-guestbook textarea{
+    width:100%;
+    font-family:'Courier New', monospace;
+    border:2px inset #999;
+    padding:8px;
+    margin-bottom:10px;
+    font-size:0.9rem;
+  }
+  .retro-guestbook button{
+    font-family:'Courier New', monospace;
+    background:#D3DEE8;
+    border:2px outset #999;
+    padding:8px 16px;
+    cursor:pointer;
+    font-weight:700;
+  }
+  .guestbook-entry{
+    border-bottom:1px dashed #999;
+    padding:8px 0;
+    font-family:'Courier New', monospace;
+    font-size:0.85rem;
+  }
+  .guestbook-entry b{color:#003D66;}
+
+  /* ---------- RETRO EXPANSION: loading bar ---------- */
+  .retro-loading{
+    position:fixed;
+    inset:0;
+    z-index:500;
+    background:#001A33;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    color:#FFD700;
+    font-family:'Courier New', monospace;
+  }
+  .retro-loading.open{display:flex;}
+  .retro-loading-bar{
+    width:280px;
+    height:22px;
+    border:2px solid #FFD700;
+    margin-top:14px;
+    overflow:hidden;
+  }
+  .retro-loading-fill{
+    height:100%;
+    width:0%;
+    background:repeating-linear-gradient(45deg, #FFD700, #FFD700 8px, #001A33 8px, #001A33 16px);
+    transition:width 0.1s linear;
+  }
+
+  /* ---------- RETRO EXPANSION: fake popup ad ---------- */
+  .fake-ad{
+    position:fixed;
+    top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    z-index:420;
+    background:#FFF;
+    border:4px solid #FF0000;
+    padding:24px 28px;
+    text-align:center;
+    max-width:340px;
+    display:none;
+    font-family:'Comic Sans MS', 'Trebuchet MS', sans-serif;
+  }
+  .fake-ad.open{display:block;}
+  .fake-ad h3{color:#FF0000; font-size:1.3rem; margin-bottom:10px;}
+  .fake-ad button{
+    margin-top:14px;
+    background:#003D66;
+    color:#fff;
+    border:none;
+    padding:8px 16px;
+    cursor:pointer;
+    font-weight:700;
+  }
+
+  /* ---------- RETRO EXPANSION: mystery tease + glitch flicker ---------- */
+  .mystery-tease{
+    display:none;
+    position:fixed;
+    bottom:16px;
+    right:16px;
+    z-index:90;
+    font-family:'Courier New', monospace;
+    font-size:0.8rem;
+    color:#FF0000;
+    background:#000;
+    border:1px solid #444;
+    padding:6px 10px;
+    cursor:pointer;
+    animation:hard-blink 1.6s steps(1) infinite;
+  }
+  body.retro-mode .mystery-tease{display:block;}
+
+  .retro-glitch-flash{
+    position:fixed;
+    inset:0;
+    z-index:600;
+    background:#fff;
+    opacity:0;
+    pointer-events:none;
+  }
+  .retro-glitch-flash.flash{
+    animation:retro-flash 0.15s steps(2);
+  }
+  @keyframes retro-flash{
+    0%{opacity:0;}
+    50%{opacity:0.6;}
+    100%{opacity:0;}
+  }
+
+  /* ---------- ROBLOX INVASION ---------- */
+  .invasion-layer{
+    position:fixed;
+    inset:0;
+    z-index:350;
+    pointer-events:none;
+    overflow:hidden;
+  }
+  .noob{
+    position:absolute;
+    width:46px;
+    height:64px;
+  }
+  .noob-body{
+    position:relative;
+    width:100%;
+    height:100%;
+  }
+  .noob .n-head{
+    position:absolute;
+    top:0; left:50%;
+    transform:translateX(-50%);
+    width:20px; height:20px;
+    background:#F2C879;
+    border:2px solid #000;
+    border-radius:2px;
+  }
+  .noob .n-head::before, .noob .n-head::after{
+    content:'';
+    position:absolute;
+    top:8px;
+    width:2px; height:2px;
+    background:#000;
+  }
+  .noob .n-head::before{left:5px;}
+  .noob .n-head::after{left:11px;}
+  .noob .n-torso{
+    position:absolute;
+    top:20px; left:50%;
+    transform:translateX(-50%);
+    width:22px; height:22px;
+    background:#3EA038;
+    border:2px solid #000;
+  }
+  .noob .n-arm{
+    position:absolute;
+    top:21px;
+    width:7px; height:19px;
+    background:#F2C879;
+    border:2px solid #000;
+    transform-origin:top center;
+  }
+  .noob .n-arm.left{left:2px;}
+  .noob .n-arm.right{right:2px;}
+  .noob .n-leg{
+    position:absolute;
+    top:41px;
+    width:9px; height:20px;
+    background:#2E4FA3;
+    border:2px solid #000;
+    transform-origin:top center;
+  }
+  .noob .n-leg.left{left:11px;}
+  .noob .n-leg.right{right:11px;}
+  .noob-prop{
+    position:absolute;
+    top:14px;
+    right:-14px;
+    font-size:1.1rem;
+  }
+  .noob-tag{
+    position:absolute;
+    top:-26px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#fff;
+    color:#000;
+    border:2px solid #000;
+    border-radius:6px;
+    padding:2px 8px;
+    font-family:'Fredoka',sans-serif;
+    font-weight:700;
+    font-size:0.7rem;
+    white-space:nowrap;
+  }
+
+  /* walking leg swing while moving */
+  .noob.walking .n-leg.left{ animation:leg-swing-l 0.4s steps(2) infinite; }
+  .noob.walking .n-leg.right{ animation:leg-swing-r 0.4s steps(2) infinite; }
+  @keyframes leg-swing-l{ 0%,100%{transform:rotate(20deg);} 50%{transform:rotate(-20deg);} }
+  @keyframes leg-swing-r{ 0%,100%{transform:rotate(-20deg);} 50%{transform:rotate(20deg);} }
+
+  /* action animations, applied while a noob has stopped to do its "thing" */
+  .noob.act-bounce{ animation:act-bounce 0.5s ease-in-out infinite; }
+  @keyframes act-bounce{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+
+  .noob.act-shake{ animation:act-shake 0.15s linear infinite; }
+  @keyframes act-shake{ 0%,100%{transform:translateX(0) rotate(0deg);} 25%{transform:translateX(-3px) rotate(-3deg);} 75%{transform:translateX(3px) rotate(3deg);} }
+
+  .noob.act-jump{ animation:act-jump 0.6s ease-in-out infinite; }
+  @keyframes act-jump{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-22px);} }
+
+  .noob.act-chop .n-arm.right,
+  .noob.act-slash .n-arm.right,
+  .noob.act-stab .n-arm.right{
+    animation:arm-swing 0.35s ease-in-out infinite;
+  }
+  @keyframes arm-swing{ 0%,100%{transform:rotate(0deg);} 50%{transform:rotate(-70deg);} }
+
+  .noob.act-wave .n-arm.right{
+    animation:arm-wave 0.4s ease-in-out infinite;
+  }
+  @keyframes arm-wave{ 0%,100%{transform:rotate(-10deg);} 50%{transform:rotate(-100deg);} }
+
+  .noob.act-run .n-leg.left{ animation:leg-swing-l 0.18s steps(2) infinite; }
+  .noob.act-run .n-leg.right{ animation:leg-swing-r 0.18s steps(2) infinite; }
 </style>
 </head>
 <body>
@@ -678,7 +960,7 @@
     <div class="cube cube-d"><div class="face top"></div><div class="face front"></div></div>
 
     <div class="hero-inner">
-      <span class="eyebrow-pill">🎮 A Roblox game studio</span>
+      <span class="eyebrow-pill">🎮 A Roblox game studio</span><span class="blink-badge" id="newBadge">NEW!</span>
       <h1>Games worth <span class="hl">grinding</span> for.</h1>
       <p>Henjs Studios builds colorful worlds, silly physics, and games your friends will beg you to join.</p>
       <div class="hero-ctas">
@@ -742,10 +1024,45 @@
       <h2>Join the crew</h2>
       <p>Get sneak peeks, vote on new features, and hang out with other players.</p>
       <div class="social-row" id="socialRow"></div>
+      <div class="webring-badge">
+        <a href="#top">◀ PREV</a>
+        <span>HENJS WEBRING</span>
+        <a href="#top">RANDOM ▶</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="guestbookSection">
+    <div class="wrap">
+      <div class="retro-guestbook">
+        <h3>📖 Sign Our Guestbook!</h3>
+        <input type="text" id="guestbookName" placeholder="Your name" maxlength="30">
+        <textarea id="guestbookMessage" placeholder="Leave a message..." rows="3" maxlength="200"></textarea>
+        <button type="button" id="guestbookSubmit">Sign Guestbook</button>
+        <div id="guestbookList"></div>
+      </div>
     </div>
   </section>
 
 </main>
+
+<div class="invasion-layer" id="invasionLayer"></div>
+
+<div class="retro-loading" id="retroLoading">
+  <div>LOADING RETRO MODE...</div>
+  <div class="retro-loading-bar"><div class="retro-loading-fill" id="retroLoadingFill"></div></div>
+</div>
+
+<div class="fake-ad" id="fakeAd">
+  <h3>🎉 CONGRATULATIONS VISITOR!!! 🎉</h3>
+  <p>You have won... absolutely nothing. This is a joke ad, we promise. 😄</p>
+  <button type="button" id="fakeAdClose">No thanks</button>
+</div>
+
+<button type="button" class="mystery-tease" id="mysteryTease">???.exe</button>
+
+<div class="retro-glitch-flash" id="retroGlitchFlash"></div>
+
 
 <footer>
   <p>© 2026 Henjs Studios. Made by players, for players.</p>
@@ -1140,24 +1457,221 @@ Grab a friend, race to fill your index, and see who can build the biggest fortun
   });
 
   // ---- retro logo easter egg ----
-  const RETRO_CHANCE = 1; // 12% chance the logo shows up retro-styled
+  const RETRO_CHANCE = 0.12; // chance (0 to 1) the logo shows up retro-styled on page load
   const brandLink = document.getElementById('brandLink');
   const retroCounter = document.getElementById('retroCounter');
+  const retroLoading = document.getElementById('retroLoading');
+  const retroLoadingFill = document.getElementById('retroLoadingFill');
+  const fakeAd = document.getElementById('fakeAd');
+  const fakeAdClose = document.getElementById('fakeAdClose');
+  const mysteryTease = document.getElementById('mysteryTease');
+  const retroGlitchFlash = document.getElementById('retroGlitchFlash');
+
+  let hasShownFakeAd = false;
+  let glitchInterval = null;
 
   if (Math.random() < RETRO_CHANCE) {
     brandLink.classList.add('retro-logo');
   }
 
+  function playLoadingBar(callback){
+    retroLoading.classList.add('open');
+    retroLoadingFill.style.width = '0%';
+    let pct = 0;
+    const fillTimer = setInterval(() => {
+      pct += 5 + Math.random() * 10;
+      if (pct >= 100) {
+        pct = 100;
+        clearInterval(fillTimer);
+        setTimeout(() => {
+          retroLoading.classList.remove('open');
+          callback();
+        }, 200);
+      }
+      retroLoadingFill.style.width = pct + '%';
+    }, 90);
+  }
+
+  function startGlitchFlicker(){
+    glitchInterval = setInterval(() => {
+      retroGlitchFlash.classList.add('flash');
+      setTimeout(() => retroGlitchFlash.classList.remove('flash'), 200);
+    }, 15000 + Math.random() * 10000);
+  }
+
+  function stopGlitchFlicker(){
+    clearInterval(glitchInterval);
+  }
+
+  function enterRetroMode(){
+    document.body.classList.add('retro-mode');
+
+    const visits = parseInt(localStorage.getItem('henjsRetroVisits') || '4820', 10) + 1;
+    localStorage.setItem('henjsRetroVisits', visits);
+    retroCounter.textContent = 'VISITORS: ' + String(visits).padStart(6, '0');
+
+    startGlitchFlicker();
+
+    if (!hasShownFakeAd) {
+      hasShownFakeAd = true;
+      setTimeout(() => fakeAd.classList.add('open'), 800);
+    }
+  }
+
+  function exitRetroMode(){
+    document.body.classList.remove('retro-mode');
+    stopGlitchFlicker();
+  }
+
   brandLink.addEventListener('click', (e) => {
     if (!brandLink.classList.contains('retro-logo')) return; // normal logo just scrolls up as usual
     e.preventDefault();
-    document.body.classList.toggle('retro-mode');
 
     if (document.body.classList.contains('retro-mode')) {
-      const visitorCount = 4800 + Math.floor(Math.random() * 300);
-      retroCounter.textContent = 'VISITORS: ' + String(visitorCount).padStart(6, '0');
+      exitRetroMode();
+    } else {
+      playLoadingBar(enterRetroMode);
     }
   });
+
+  fakeAdClose.addEventListener('click', () => {
+    fakeAd.classList.remove('open');
+  });
+
+  mysteryTease.addEventListener('click', () => {
+    alert('something is loading... 👀');
+  });
+
+  // ---- guestbook (saved locally to this browser only) ----
+  const guestbookName = document.getElementById('guestbookName');
+  const guestbookMessage = document.getElementById('guestbookMessage');
+  const guestbookSubmit = document.getElementById('guestbookSubmit');
+  const guestbookList = document.getElementById('guestbookList');
+
+  function loadGuestbook(){
+    try {
+      return JSON.parse(localStorage.getItem('henjsGuestbook') || '[]');
+    } catch (err) {
+      return [];
+    }
+  }
+
+  function renderGuestbook(){
+    const entries = loadGuestbook();
+    guestbookList.innerHTML = '';
+    entries.slice().reverse().forEach(entry => {
+      const div = document.createElement('div');
+      div.className = 'guestbook-entry';
+      const b = document.createElement('b');
+      b.textContent = entry.name + ': ';
+      div.appendChild(b);
+      div.appendChild(document.createTextNode(entry.message));
+      guestbookList.appendChild(div);
+    });
+  }
+
+  guestbookSubmit.addEventListener('click', () => {
+    const name = guestbookName.value.trim() || 'Anonymous';
+    const message = guestbookMessage.value.trim();
+    if (!message) return;
+
+    const entries = loadGuestbook();
+    entries.push({ name, message });
+    localStorage.setItem('henjsGuestbook', JSON.stringify(entries));
+
+    guestbookName.value = '';
+    guestbookMessage.value = '';
+    renderGuestbook();
+  });
+
+  renderGuestbook();
+
+  // ---- roblox invasion ----
+  const INVASION_GAMES = [
+    { name: 'Natural Disaster Survival', year: 2008, action: 'act-shake', prop: '💨' },
+    { name: 'Work at a Pizza Place', year: 2013, action: 'act-bounce', prop: '🍕' },
+    { name: 'Welcome to Bloxburg', year: 2014, action: 'act-chop', prop: '🔨' },
+    { name: 'Murder Mystery 2', year: 2014, action: 'act-stab', prop: '🔪' },
+    { name: 'MeepCity', year: 2016, action: 'act-wave', prop: '💬' },
+    { name: 'Adopt Me!', year: 2017, action: 'act-bounce', prop: '🐶' },
+    { name: 'Jailbreak', year: 2017, action: 'act-run', prop: '🚓' },
+    { name: 'Tower of Hell', year: 2018, action: 'act-jump', prop: '🧱' },
+    { name: 'Blox Fruits', year: 2019, action: 'act-slash', prop: '⚔️' },
+    { name: 'Brookhaven RP', year: 2020, action: 'act-wave', prop: '🏠' },
+    { name: 'Piggy', year: 2020, action: 'act-run', prop: '🐷' },
+    { name: 'Steal a Brainrot', year: 2025, action: 'act-stab', prop: '🧠' }
+  ];
+
+  const invasionLayer = document.getElementById('invasionLayer');
+  const INVASION_CHANCE = 0.35; // chance an invasion happens every interval
+
+  function animateMove(el, fromLeft, toLeft, duration){
+    return new Promise(resolve => {
+      const anim = el.animate(
+        [ { left: fromLeft + 'px' }, { left: toLeft + 'px' } ],
+        { duration: duration, easing: 'linear', fill: 'forwards' }
+      );
+      anim.onfinish = () => {
+        el.style.left = toLeft + 'px';
+        resolve();
+      };
+    });
+  }
+
+  async function spawnNoob(){
+    const game = INVASION_GAMES[Math.floor(Math.random() * INVASION_GAMES.length)];
+    const goingRight = Math.random() < 0.5;
+
+    const noob = document.createElement('div');
+    noob.className = 'noob walking';
+    noob.innerHTML = `
+      <div class="noob-tag">🎮 ${game.name} (${game.year})</div>
+      <div class="noob-body">
+        <div class="n-head"></div>
+        <div class="n-arm left"></div>
+        <div class="n-arm right"></div>
+        <div class="n-torso"></div>
+        <div class="n-leg left"></div>
+        <div class="n-leg right"></div>
+        <div class="noob-prop">${game.prop}</div>
+      </div>
+    `;
+
+    const topPos = 80 + Math.random() * (window.innerHeight - 220);
+    noob.style.top = topPos + 'px';
+    const startX = goingRight ? -60 : window.innerWidth + 60;
+    noob.style.left = startX + 'px';
+    noob.style.transform = goingRight ? 'scaleX(1)' : 'scaleX(-1)';
+
+    invasionLayer.appendChild(noob);
+
+    // walk in to a random stopping point roughly in the middle third of the screen
+    const stopX = window.innerWidth * (0.35 + Math.random() * 0.3);
+    await animateMove(noob, startX, stopX, 1800 + Math.random() * 600);
+
+    // stop and do the game's action for a couple seconds
+    noob.classList.remove('walking');
+    noob.classList.add(game.action);
+    await new Promise(r => setTimeout(r, 2200 + Math.random() * 800));
+    noob.classList.remove(game.action);
+    noob.classList.add('walking');
+
+    // walk off screen and clean up
+    const endX = goingRight ? window.innerWidth + 60 : -60;
+    await animateMove(noob, stopX, endX, 1800 + Math.random() * 600);
+    if (noob.parentNode) noob.remove();
+  }
+
+  function triggerInvasion(){
+    if (Math.random() > INVASION_CHANCE) return; // no invasion this round
+
+    const count = 3 + Math.floor(Math.random() * 3); // 3-5 noobs
+    for (let i = 0; i < count; i++) {
+      setTimeout(spawnNoob, i * 400);
+    }
+  }
+
+  setInterval(triggerInvasion, 30000);
 
 </script>
 
