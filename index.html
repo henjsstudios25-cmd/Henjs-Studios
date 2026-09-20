@@ -809,122 +809,6 @@
     100%{opacity:0;}
   }
 
-  /* ---------- ROBLOX INVASION ---------- */
-  .invasion-layer{
-    position:fixed;
-    inset:0;
-    z-index:350;
-    pointer-events:none;
-    overflow:hidden;
-  }
-  .noob{
-    position:absolute;
-    width:46px;
-    height:64px;
-  }
-  .noob-body{
-    position:relative;
-    width:100%;
-    height:100%;
-  }
-  .noob .n-head{
-    position:absolute;
-    top:0; left:50%;
-    transform:translateX(-50%);
-    width:20px; height:20px;
-    background:#F2C879;
-    border:2px solid #000;
-    border-radius:2px;
-  }
-  .noob .n-head::before, .noob .n-head::after{
-    content:'';
-    position:absolute;
-    top:8px;
-    width:2px; height:2px;
-    background:#000;
-  }
-  .noob .n-head::before{left:5px;}
-  .noob .n-head::after{left:11px;}
-  .noob .n-torso{
-    position:absolute;
-    top:20px; left:50%;
-    transform:translateX(-50%);
-    width:22px; height:22px;
-    background:#3EA038;
-    border:2px solid #000;
-  }
-  .noob .n-arm{
-    position:absolute;
-    top:21px;
-    width:7px; height:19px;
-    background:#F2C879;
-    border:2px solid #000;
-    transform-origin:top center;
-  }
-  .noob .n-arm.left{left:2px;}
-  .noob .n-arm.right{right:2px;}
-  .noob .n-leg{
-    position:absolute;
-    top:41px;
-    width:9px; height:20px;
-    background:#2E4FA3;
-    border:2px solid #000;
-    transform-origin:top center;
-  }
-  .noob .n-leg.left{left:11px;}
-  .noob .n-leg.right{right:11px;}
-  .noob-prop{
-    position:absolute;
-    top:14px;
-    right:-14px;
-    font-size:1.1rem;
-  }
-  .noob-tag{
-    position:absolute;
-    top:-26px;
-    left:50%;
-    transform:translateX(-50%);
-    background:#fff;
-    color:#000;
-    border:2px solid #000;
-    border-radius:6px;
-    padding:2px 8px;
-    font-family:'Fredoka',sans-serif;
-    font-weight:700;
-    font-size:0.7rem;
-    white-space:nowrap;
-  }
-
-  /* walking leg swing while moving */
-  .noob.walking .n-leg.left{ animation:leg-swing-l 0.4s steps(2) infinite; }
-  .noob.walking .n-leg.right{ animation:leg-swing-r 0.4s steps(2) infinite; }
-  @keyframes leg-swing-l{ 0%,100%{transform:rotate(20deg);} 50%{transform:rotate(-20deg);} }
-  @keyframes leg-swing-r{ 0%,100%{transform:rotate(-20deg);} 50%{transform:rotate(20deg);} }
-
-  /* action animations, applied while a noob has stopped to do its "thing" */
-  .noob.act-bounce{ animation:act-bounce 0.5s ease-in-out infinite; }
-  @keyframes act-bounce{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
-
-  .noob.act-shake{ animation:act-shake 0.15s linear infinite; }
-  @keyframes act-shake{ 0%,100%{transform:translateX(0) rotate(0deg);} 25%{transform:translateX(-3px) rotate(-3deg);} 75%{transform:translateX(3px) rotate(3deg);} }
-
-  .noob.act-jump{ animation:act-jump 0.6s ease-in-out infinite; }
-  @keyframes act-jump{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-22px);} }
-
-  .noob.act-chop .n-arm.right,
-  .noob.act-slash .n-arm.right,
-  .noob.act-stab .n-arm.right{
-    animation:arm-swing 0.35s ease-in-out infinite;
-  }
-  @keyframes arm-swing{ 0%,100%{transform:rotate(0deg);} 50%{transform:rotate(-70deg);} }
-
-  .noob.act-wave .n-arm.right{
-    animation:arm-wave 0.4s ease-in-out infinite;
-  }
-  @keyframes arm-wave{ 0%,100%{transform:rotate(-10deg);} 50%{transform:rotate(-100deg);} }
-
-  .noob.act-run .n-leg.left{ animation:leg-swing-l 0.18s steps(2) infinite; }
-  .noob.act-run .n-leg.right{ animation:leg-swing-r 0.18s steps(2) infinite; }
 </style>
 </head>
 <body>
@@ -1045,8 +929,6 @@
   </section>
 
 </main>
-
-<div class="invasion-layer" id="invasionLayer"></div>
 
 <div class="retro-loading" id="retroLoading">
   <div>LOADING RETRO MODE...</div>
@@ -1457,7 +1339,7 @@ Grab a friend, race to fill your index, and see who can build the biggest fortun
   });
 
   // ---- retro logo easter egg ----
-  const RETRO_CHANCE = 1; // chance (0 to 1) the logo shows up retro-styled on page load
+  const RETRO_CHANCE = 0.12; // chance (0 to 1) the logo shows up retro-styled on page load
   const brandLink = document.getElementById('brandLink');
   const retroCounter = document.getElementById('retroCounter');
   const retroLoading = document.getElementById('retroLoading');
@@ -1539,7 +1421,7 @@ Grab a friend, race to fill your index, and see who can build the biggest fortun
   });
 
   mysteryTease.addEventListener('click', () => {
-    alert('something is loading... 👀');
+    window.location.href = 'teaser.html';
   });
 
   // ---- guestbook (saved locally to this browser only) ----
@@ -1585,93 +1467,6 @@ Grab a friend, race to fill your index, and see who can build the biggest fortun
   });
 
   renderGuestbook();
-
-  // ---- roblox invasion ----
-  const INVASION_GAMES = [
-    { name: 'Natural Disaster Survival', year: 2008, action: 'act-shake', prop: '💨' },
-    { name: 'Work at a Pizza Place', year: 2013, action: 'act-bounce', prop: '🍕' },
-    { name: 'Welcome to Bloxburg', year: 2014, action: 'act-chop', prop: '🔨' },
-    { name: 'Murder Mystery 2', year: 2014, action: 'act-stab', prop: '🔪' },
-    { name: 'MeepCity', year: 2016, action: 'act-wave', prop: '💬' },
-    { name: 'Adopt Me!', year: 2017, action: 'act-bounce', prop: '🐶' },
-    { name: 'Jailbreak', year: 2017, action: 'act-run', prop: '🚓' },
-    { name: 'Tower of Hell', year: 2018, action: 'act-jump', prop: '🧱' },
-    { name: 'Blox Fruits', year: 2019, action: 'act-slash', prop: '⚔️' },
-    { name: 'Brookhaven RP', year: 2020, action: 'act-wave', prop: '🏠' },
-    { name: 'Piggy', year: 2020, action: 'act-run', prop: '🐷' },
-    { name: 'Steal a Brainrot', year: 2025, action: 'act-stab', prop: '🧠' }
-  ];
-
-  const invasionLayer = document.getElementById('invasionLayer');
-  const INVASION_CHANCE = 0.35; // chance an invasion happens every interval
-
-  function animateMove(el, fromLeft, toLeft, duration){
-    return new Promise(resolve => {
-      const anim = el.animate(
-        [ { left: fromLeft + 'px' }, { left: toLeft + 'px' } ],
-        { duration: duration, easing: 'linear', fill: 'forwards' }
-      );
-      anim.onfinish = () => {
-        el.style.left = toLeft + 'px';
-        resolve();
-      };
-    });
-  }
-
-  async function spawnNoob(){
-    const game = INVASION_GAMES[Math.floor(Math.random() * INVASION_GAMES.length)];
-    const goingRight = Math.random() < 0.5;
-
-    const noob = document.createElement('div');
-    noob.className = 'noob walking';
-    noob.innerHTML = `
-      <div class="noob-tag">🎮 ${game.name} (${game.year})</div>
-      <div class="noob-body">
-        <div class="n-head"></div>
-        <div class="n-arm left"></div>
-        <div class="n-arm right"></div>
-        <div class="n-torso"></div>
-        <div class="n-leg left"></div>
-        <div class="n-leg right"></div>
-        <div class="noob-prop">${game.prop}</div>
-      </div>
-    `;
-
-    const topPos = 80 + Math.random() * (window.innerHeight - 220);
-    noob.style.top = topPos + 'px';
-    const startX = goingRight ? -60 : window.innerWidth + 60;
-    noob.style.left = startX + 'px';
-    noob.style.transform = goingRight ? 'scaleX(1)' : 'scaleX(-1)';
-
-    invasionLayer.appendChild(noob);
-
-    // walk in to a random stopping point roughly in the middle third of the screen
-    const stopX = window.innerWidth * (0.35 + Math.random() * 0.3);
-    await animateMove(noob, startX, stopX, 1800 + Math.random() * 600);
-
-    // stop and do the game's action for a couple seconds
-    noob.classList.remove('walking');
-    noob.classList.add(game.action);
-    await new Promise(r => setTimeout(r, 2200 + Math.random() * 800));
-    noob.classList.remove(game.action);
-    noob.classList.add('walking');
-
-    // walk off screen and clean up
-    const endX = goingRight ? window.innerWidth + 60 : -60;
-    await animateMove(noob, stopX, endX, 1800 + Math.random() * 600);
-    if (noob.parentNode) noob.remove();
-  }
-
-  function triggerInvasion(){
-    if (Math.random() > INVASION_CHANCE) return; // no invasion this round
-
-    const count = 3 + Math.floor(Math.random() * 3); // 3-5 noobs
-    for (let i = 0; i < count; i++) {
-      setTimeout(spawnNoob, i * 400);
-    }
-  }
-
-  setInterval(triggerInvasion, 30000);
 
 </script>
 
